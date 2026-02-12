@@ -2,7 +2,8 @@ name: Metrics
 
 on:
   schedule: [{ cron: "0 4 * * *" }]
-  push: { branches: ["main"] }
+  push:
+    branches: ["main"]
   workflow_dispatch:
 
 concurrency:
@@ -15,9 +16,17 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: write
+
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
+          fetch-depth: 0
+
+      - name: Generate metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # Token per leggere i dati (API)
           token: ${{ secrets.METRICS_TOKEN }}
 
           template: classic
@@ -25,7 +34,6 @@ jobs:
           config_timezone: Europe/Rome
           config_display: large
 
-          # Languages (portfolio signal)
           plugin_languages: yes
           plugin_languages_ignored: html, css, markdown, mdx, tex, dockerfile, shell
           plugin_languages_details: percentage, bytes-size
@@ -34,20 +42,20 @@ jobs:
           plugin_languages_recent_load: 1000
           plugin_languages_recent_days: 365
 
-          # Habits OFF (evita l’errore e ripulisce)
           plugin_habits: no
 
-      # Post-process SVG: rimuove <a>...</a> per rendere "Most used languages" non cliccabile
       - name: Remove links from SVG
         run: |
-          if [ -f "github-metrics.svg" ]; then
-            sed -i 's/<a[^>]*>//g; s/<\/a>//g' github-metrics.svg
-          fi
+          test -f github-metrics.svg
+          sed -i 's/<a[^>]*>//g; s#</a>##g' github-metrics.svg
 
-      # Commit del file modificato (solo se cambiato)
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add github-metrics.svg || true
-          git diff --cached --quiet || (git commit -m "chore: update metrics" && git push)
+
+          git add github-metrics.svg
+          git diff --cached --quiet && exit 0
+
+          git commit -m "chore: update metrics"
+          git push
