@@ -12,28 +12,36 @@ concurrency:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
       contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+
+          # Look & base sections (pulito, non troppo “pieno”)
           template: classic
           base: header, activity, repositories, metadata
           config_timezone: Europe/Rome
           config_display: large
 
+          # ── Languages (fix: campione più grande, meno “JS 621 bytes”)
           plugin_languages: yes
           plugin_languages_ignored: html, css, markdown
           plugin_languages_details: percentage, bytes-size
           plugin_languages_limit: 8
-          plugin_languages_indepth: yes
-          plugin_languages_recent_load: 200
-          plugin_languages_recent_days: 14
 
+          # Baseline stabile: prima facciamo numeri sensati, poi (se vuoi) rimetti indepth
+          plugin_languages_indepth: no
+
+          # Più contesto: allarga finestra e quantità per evitare stime ridicole
+          plugin_languages_recent_load: 1000
+          plugin_languages_recent_days: 365
+
+          # ── Habits (fix: evita “Unexpected error”)
           plugin_habits: yes
           plugin_habits_from: 200
           plugin_habits_days: 14
-          plugin_habits_facts: yes
+          plugin_habits_facts: no
           plugin_habits_charts: yes
