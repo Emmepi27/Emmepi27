@@ -28,6 +28,7 @@
   <img alt="PostGIS" src="https://img.shields.io/badge/PostGIS-2E8B57?logo=postgresql&logoColor=white" />
 
   <!-- WebGIS / Maps -->
+  <img alt="GeoDjango" src="https://img.shields.io/badge/GeoDjango-092E20?labelColor=092E20" />
   <img alt="MapLibre GL JS" src="https://img.shields.io/badge/MapLibre-111?logo=mapbox&logoColor=white" />
   <img alt="Mapbox" src="https://img.shields.io/badge/Mapbox-000000?labelColor=000000" />
 
