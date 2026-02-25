@@ -29,7 +29,7 @@
 
   <!-- WebGIS / Maps -->
   <img alt="MapLibre GL JS" src="https://img.shields.io/badge/MapLibre-111?logo=mapbox&logoColor=white" />
-  <img alt="Mapbox" src="https://img.shields.io/badge/Mapbox-000?logo=mapbox&logoColor=white" />
+  <img alt="Mapbox" src="https://img.shields.io/badge/Mapbox-000000?labelColor=000000" />
 
   <!-- Platform -->
   <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" />
