@@ -1,10 +1,12 @@
 # Dashboard
 
-**Stack (by layer):**
+**Core stack (by layer):**
 - **Frontend:** Next.js · React · TypeScript · Tailwind
-- **WebGIS:** MapLibre GL JS · PostGIS
+- **WebGIS:** PostGIS · MapLibre GL JS
 - **Backend & Data:** PostgreSQL · Python · PHP · Laravel
 - **Platform:** Docker
+
+**Exploring:** Vue · Nuxt
 
 <p align="left">
   <!-- Frontend -->
@@ -15,8 +17,8 @@
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white" />
 
   <!-- WebGIS -->
-  <img alt="MapLibre GL JS" src="https://img.shields.io/badge/MapLibre-111?logo=mapbox&logoColor=white" />
   <img alt="PostGIS" src="https://img.shields.io/badge/PostGIS-2E8B57?logo=postgresql&logoColor=white" />
+  <img alt="MapLibre GL JS" src="https://img.shields.io/badge/MapLibre-111?logo=mapbox&logoColor=white" />
 
   <!-- Backend & Data -->
   <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" />
@@ -27,11 +29,13 @@
   <!-- Platform -->
   <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" />
 
-  <!-- Core Web -->
+  <!-- Foundations -->
   <img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white" />
   <img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white" />
+</p>
 
-  <!-- Vue ecosystem (secondary) -->
+<p align="left">
+  <!-- Exploring -->
   <img alt="Vue.js" src="https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=white" />
   <img alt="Nuxt.js" src="https://img.shields.io/badge/Nuxt.js-00DC82?logo=nuxtdotjs&logoColor=white" />
 </p>
@@ -40,5 +44,7 @@
 
 ## 📊 Metrics
 <p align="left">
-  <img src="github-metrics.svg?cache=2" alt="GitHub Metrics dashboard" />
+  <img src="github-metrics.svg?cache=2" alt="Auto-generated GitHub metrics dashboard" />
 </p>
+
+<sub>Updated automatically via GitHub Actions.</sub>
