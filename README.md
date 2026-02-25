@@ -1,6 +1,6 @@
 # Dashboard
 
-**Core stack (by layer):**
+**Core stack:**
 - **Frontend:** Next.js · React · TypeScript · Tailwind
 - **WebGIS:** PostGIS · MapLibre GL JS
 - **Backend & Data:** PostgreSQL · Python · PHP · Laravel
